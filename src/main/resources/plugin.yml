@@ -1,0 +1,17 @@
+name: configurable-difficulty
+version: "1.2.0"
+main: com.example.biomediff.BiomeDifficultyPlugin
+api-version: "1.21"
+authors:
+  - Payangar
+description: Adjusts entity attributes based on configurable difficulty
+
+commands:
+  biomediff:
+    description: Configurable Difficulty plugin commands
+    usage: /<command> <reload|info>
+    permission: biomediff.admin
+permissions:
+  biomediff.admin:
+    description: Allows reloading the configurable difficulty config
+    default: op

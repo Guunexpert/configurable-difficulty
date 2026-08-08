@@ -1,14 +1,9 @@
 pluginManagement {
     repositories {
         gradlePluginPortal()
-        maven("https://maven.fabricmc.net/")
-        maven("https://maven.neoforged.net/releases/")
-        maven("https://maven.isxander.dev/releases")
+        mavenCentral()
+        maven("https://repo.papermc.io/repository/maven-public/")
     }
 }
 
-rootProject.name = "configurable-difficulty"
-
-include("common")
-include("fabric")
-include("neoforge")
+rootProject.name = "configurable-difficulty-plugin"

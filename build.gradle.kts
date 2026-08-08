@@ -1,34 +1,25 @@
 plugins {
-    id("java")
+    java
 }
 
-allprojects {
-    apply(plugin = "java")
-    
-    group = property("mod_group_id").toString()
-    version = property("mod_version").toString()
-    
-    repositories {
-        mavenCentral()
-        maven("https://maven.fabricmc.net/")
-        maven("https://maven.neoforged.net/releases/")
-        maven("https://maven.parchmentmc.org")
-        maven("https://maven.isxander.dev/releases")
+group = "com.example.biomediff"
+version = "1.2.0"
+
+repositories {
+    mavenCentral()
+    maven("https://repo.papermc.io/repository/maven-public/")
+}
+
+dependencies {
+    compileOnly("io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT")
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(21))
     }
-    
-    val javaVersionNum: Int = try {
-        property("java_version").toString().toInt()
-    } catch (e: Exception) {
-        21
-    }
-    
-    tasks.withType<JavaCompile> {
-        options.encoding = "UTF-8"
-        options.release.set(javaVersionNum)
-    }
-    
-    java {
-        toolchain.languageVersion.set(JavaLanguageVersion.of(javaVersionNum))
-        withSourcesJar()
-    }
+}
+
+tasks.jar {
+    archiveFileName.set("configurable-difficulty-${project.version}.jar")
 }
