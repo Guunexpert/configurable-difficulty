@@ -1,0 +1,145 @@
+# Configurable Difficulty - Config
+# Multiplier of 1.0 = no change, 2.0 = 2x harder, 0.5 = half difficulty
+# knockback-resistance uses an additive value (0.1 = +10%)
+
+enabled: true
+
+# How players get difficulty modifiers: DYNAMIC or SPAWN_ONLY
+player-mode: DYNAMIC
+# How mobs get difficulty modifiers: DYNAMIC or SPAWN_ONLY
+mob-mode: SPAWN_ONLY
+
+# Check interval in ticks (20 = 1 second) - used by DYNAMIC mode
+check-interval: 20
+
+apply-to-hostile-mobs: true
+apply-to-passive-mobs: false
+apply-to-neutral-mobs: false
+
+# Enable/disable XP multiplier scaling
+xp-enabled: true
+
+# Enable debug logging
+debug-enabled: false
+debug-log-biome-changes: true
+debug-log-attribute-changes: true
+
+# Which attributes to modify
+enabled-attributes:
+  max-health: true
+  armor: true
+  armor-toughness: true
+  attack-damage: true
+  attack-speed: false
+  attack-knockback: false
+  knockback-resistance: true
+  luck: true
+
+# Default multipliers for biomes not explicitly configured
+default-multipliers:
+  max-health: 1.0
+  armor: 1.0
+  armor-toughness: 1.0
+  attack-damage: 1.0
+  attack-speed: 1.0
+  attack-knockback: 1.0
+  knockback-resistance: 0.0
+  luck: 1.0
+  xp: 1.0
+
+# Dimension multipliers: base difficulty per dimension
+# Format: namespace:dimension
+dimension-multipliers:
+  minecraft:overworld:
+    max-health: 1.0
+    armor: 1.0
+    armor-toughness: 1.0
+    attack-damage: 1.0
+    attack-speed: 1.0
+    attack-knockback: 1.0
+    knockback-resistance: 0.0
+    luck: 1.0
+    xp: 1.0
+  minecraft:the_nether:
+    max-health: 1.5
+    armor: 1.3
+    armor-toughness: 1.0
+    attack-damage: 1.5
+    attack-speed: 1.0
+    attack-knockback: 1.0
+    knockback-resistance: 0.0
+    luck: 1.2
+    xp: 1.5
+  minecraft:the_end:
+    max-health: 2.0
+    armor: 1.5
+    armor-toughness: 1.0
+    attack-damage: 2.0
+    attack-speed: 1.0
+    attack-knockback: 1.0
+    knockback-resistance: 0.0
+    luck: 1.5
+    xp: 2.0
+
+# Biome-specific multipliers. Format: namespace:biome
+biome-multipliers:
+  minecraft:desert:
+    max-health: 1.5
+    armor: 0.8
+    armor-toughness: 1.0
+    attack-damage: 1.3
+    attack-speed: 1.0
+    attack-knockback: 1.0
+    knockback-resistance: 0.1
+    luck: 1.1
+    xp: 1.2
+  minecraft:frozen_ocean:
+    max-health: 2.0
+    armor: 1.5
+    armor-toughness: 1.3
+    attack-damage: 1.5
+    attack-speed: 1.0
+    attack-knockback: 1.0
+    knockback-resistance: 0.3
+    luck: 1.3
+    xp: 1.5
+  minecraft:deep_dark:
+    max-health: 2.5
+    armor: 2.0
+    armor-toughness: 1.5
+    attack-damage: 2.0
+    attack-speed: 1.0
+    attack-knockback: 1.0
+    knockback-resistance: 0.4
+    luck: 1.5
+    xp: 2.0
+  minecraft:mushroom_fields:
+    max-health: 0.5
+    armor: 0.5
+    armor-toughness: 1.0
+    attack-damage: 0.5
+    attack-speed: 1.0
+    attack-knockback: 1.0
+    knockback-resistance: 0.0
+    luck: 1.2
+    xp: 0.5
+
+# Depth scaling: progressive difficulty based on Y-coordinate
+depth-scaling:
+  enabled: false
+  # Y-level where scaling starts (above = no bonus)
+  y-threshold: 0
+  # Y-level where max multiplier is reached
+  max-depth: -64
+  # Scaling mode: linear
+  scaling-mode: linear
+  max-multipliers:
+    max-health: 1.0
+    armor: 1.0
+    armor-toughness: 1.0
+    attack-damage: 1.0
+    attack-speed: 1.0
+    attack-knockback: 1.0
+    knockback-resistance: 0.0
+    luck: 1.0
+    xp: 1.0
