@@ -253,4 +253,13 @@ public class AttributeManager {
         // Ultimate fallback: 1.0x for all attributes
         return new BiomeMultipliers();
     }
+    
+    public static double getXpMultiplier(LivingEntity entity) {
+        if (!BiomeDifficulty.getConfig().xpEnabled) return 1.0;
+        
+        BiomeMultipliers dimensionMultipliers = getDimensionMultipliers(getDimensionId(entity));
+        BiomeMultipliers biomeMultipliers = BiomeDifficulty.getConfig().getMultipliersForBiome(getBiomeId(entity));
+        
+        return dimensionMultipliers.xp * biomeMultipliers.xp;
+    }
 }

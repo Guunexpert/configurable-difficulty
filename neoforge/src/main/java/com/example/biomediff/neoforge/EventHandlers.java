@@ -3,9 +3,11 @@ package com.example.biomediff.neoforge;
 import com.example.biomediff.BiomeDifficulty;
 import com.example.biomediff.core.DynamicModifierHandler;
 import com.example.biomediff.core.SpawnModifierHandler;
+import com.example.biomediff.core.XpHandler;
 import net.minecraft.world.entity.LivingEntity;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
+import net.neoforged.neoforge.event.entity.living.LivingExperienceDropEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
 
 public class EventHandlers {
@@ -18,6 +20,13 @@ public class EventHandlers {
                 SpawnModifierHandler.onEntitySpawn(livingEntity);
             }
         }
+    }
+    
+    @SubscribeEvent
+    public void onExperienceDrop(LivingExperienceDropEvent event) {
+        LivingEntity entity = event.getEntity();
+        int scaled = XpHandler.scaleExperience(event.getDroppedExperience(), entity);
+        event.setDroppedExperience(scaled);
     }
     
     @SubscribeEvent

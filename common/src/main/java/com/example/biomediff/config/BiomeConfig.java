@@ -38,6 +38,9 @@ public class BiomeConfig {
     @SerialEntry(comment = "Apply to neutral mobs")
     public boolean applyToNeutralMobs = false;
 
+    @SerialEntry(comment = "Enable/disable XP multiplier scaling")
+    public boolean xpEnabled = false;
+
     @SerialEntry(comment = "Enable debug logging")
     public boolean debugEnabled = false;
 
@@ -81,6 +84,7 @@ public class BiomeConfig {
         netherMult.armor = 1.3;
         netherMult.attackDamage = 1.5;
         netherMult.luck = 1.2;
+        netherMult.xp = 1.5;
         map.put("minecraft:the_nether", netherMult);
 
         BiomeMultipliers endMult = new BiomeMultipliers();
@@ -88,6 +92,7 @@ public class BiomeConfig {
         endMult.armor = 1.5;
         endMult.attackDamage = 2.0;
         endMult.luck = 1.5;
+        endMult.xp = 2.0;
         map.put("minecraft:the_end", endMult);
 
         return map;
@@ -102,6 +107,7 @@ public class BiomeConfig {
         desert.attackDamage = 1.3;
         desert.knockbackResistance = 0.1;
         desert.luck = 1.1;
+        desert.xp = 1.2;
         map.put("minecraft:desert", desert);
 
         BiomeMultipliers frozenOcean = new BiomeMultipliers();
@@ -111,6 +117,7 @@ public class BiomeConfig {
         frozenOcean.attackDamage = 1.5;
         frozenOcean.knockbackResistance = 0.3;
         frozenOcean.luck = 1.3;
+        frozenOcean.xp = 1.5;
         map.put("minecraft:frozen_ocean", frozenOcean);
 
         BiomeMultipliers deepDark = new BiomeMultipliers();
@@ -120,6 +127,7 @@ public class BiomeConfig {
         deepDark.attackDamage = 2.0;
         deepDark.knockbackResistance = 0.4;
         deepDark.luck = 1.5;
+        deepDark.xp = 2.0;
         map.put("minecraft:deep_dark", deepDark);
 
         BiomeMultipliers mushroomFields = new BiomeMultipliers();
@@ -127,6 +135,7 @@ public class BiomeConfig {
         mushroomFields.armor = 0.5;
         mushroomFields.attackDamage = 0.5;
         mushroomFields.luck = 1.2;
+        mushroomFields.xp = 0.5;
         map.put("minecraft:mushroom_fields", mushroomFields);
 
         return map;

@@ -27,6 +27,9 @@ public class BiomeMultipliers {
     @SerialEntry
     public double luck = 1.0;
 
+    @SerialEntry
+    public double xp = 1.0;
+
     public static BiomeMultipliers combine(BiomeMultipliers a, BiomeMultipliers b) {
         BiomeMultipliers result = new BiomeMultipliers();
         result.maxHealth = a.maxHealth * b.maxHealth;
@@ -37,6 +40,7 @@ public class BiomeMultipliers {
         result.attackKnockback = a.attackKnockback * b.attackKnockback;
         result.knockbackResistance = a.knockbackResistance + b.knockbackResistance;
         result.luck = a.luck * b.luck;
+        result.xp = a.xp * b.xp;
         return result;
     }
 }
