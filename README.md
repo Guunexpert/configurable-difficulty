@@ -13,8 +13,8 @@ A server-side Minecraft **plugin** (Paper / Purpur / Spigot / Bukkit) for 1.21.1
   - **Final Formula**: `Dimension × Biome × Depth`
 
 - **Hybrid Modifier System**:
-  - Players: Always affected (luck attribute only, dynamic mode)
-  - Mobs: Configurable whether to apply (combat attributes only, spawn-only mode)
+  - Players: Always affected (luck attribute only)
+  - Mobs: Configurable whether to apply
 
 - **Works with ALL biome/dimension plugins** (any `namespace:key`)
 
@@ -122,7 +122,7 @@ depth-scaling:
 ### Multiplier Calculation
 
 ```
-Final Multiplier = Dimension Multiplier × Biome Multiplier × Depth Multiplier
+Dimension Multiplier × Biome Multiplier × Depth Multiplier = Final Multiplier
 ```
 
 Example — zombie in The End:
